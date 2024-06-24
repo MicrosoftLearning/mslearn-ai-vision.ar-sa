@@ -1,0 +1,497 @@
+---
+lab:
+  title: كشف وتحليل الوجوه
+  module: Module 4 - Detecting and Analyze Faces
+---
+
+# كشف وتحليل الوجوه
+
+القدرة على اكتشاف وتحليل الوجوه البشرية هي القدرة الأساسية للذكاء الاصطناعي. في هذا التمرين، ستستكشف خدمتي الذكاء الاصطناعي في Azure التي يمكنك استخدامها للعمل مع الوجوه في الصور: خدمة **Azure AI Vision** وخدمة **Face** .
+
+> **هام**: يمكن إكمال هذا الواجب دون طلب أي وصول إضافي إلى الميزات المقيدة.
+
+> **ملاحظة**: بدءًا من 21 يونيو 2022، تقتصر قدرات خدمات الذكاء الاصطناعي في Azure التي ترجع معلومات التعريف الشخصية المقيدة على العملاء الذين تم منحهم [حق وصول محدود](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). بالإضافة إلى ذلك، لم تعد القدرات التي تستنتج الحالة العاطفية متوفرة. لمزيد من التفاصيل حول التغييرات التي قامت بها Microsoft، ولماذا - راجع [استثمارات الذكاء الاصطناعي المسؤول وضماناته للتعرف على الوجوه](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/).
+
+## استنساخ المستودع لهذه الدورة التدريبية
+
+إذا لم تقم بالاستنساخ بالفعل، يجب عليك استنساخ مستودع التعليمات البرمجية لهذه الدورة التدريبية:
+
+1. ابدأ تشغيل Visual Studio Code.
+2. افتح لوحة (SHIFT+CTRL+P) وشغّل **Git: استنسخ الأمر** لاستنساخ مستودع `https://github.com/MicrosoftLearning/mslearn-ai-vision` إلى مجلد محلي (لا يُهم أي مجلد).
+3. عند استنساخ المستودع، افتح المجلد في Visual Studio Code.
+4. انتظر حتى يتم تثبيت ملفات إضافية لدعم مشاريع التعليمات البرمجية C# في المستودع.
+
+    > **ملاحظة**: إذا تمت مطالبتك بإضافة الأصول المطلوبة للبناء وتصحيح الأخطاء، فحدد **ليس الآن**.
+
+## توفير مورد خدمات الذكاء الاصطناعي في Azure
+
+إذا لم يكن لديك بالفعل واحد في اشتراكك، فسيتعين عليك توفير مورد **خدمات الذكاء الاصطناعي في Azure**.
+
+1. افتح مدخل Azure على `https://portal.azure.com`، وقم بتسجيل الدخول باستخدام حساب Microsoft المقترن باشتراك Azure.
+2. في شريط البحث العلوي، ابحث عن *خدمات الذكاء الاصطناعي في Azure*، وحدد **خدمات الذكاء الاصطناعي في Azure**، وأنشئ مورد حساب متعدد الخدمات لخدمات الذكاء الاصطناعي في Azure بالإعدادات التالية:
+    - **Subscription**: *اشتراكك في Azure*
+    - **مجموعة الموارد**: *اختر أو أنشئ مجموعة موارد (إذا كنت تستخدم اشتراكًا مقيدًا، فقد لا يكون لديك إذن لإنشاء مجموعة موارد جديدة - استخدم المجموعة المتوفرة)*
+    - **المنطقة**: *اختر أي منطقة متوفرة*
+    - **الاسم**: *أدخل اسماً فريداً*
+    - **مستوى التسعير**: قياسي S0
+3. حدد مربعات الاختيار المطلوبة ثم أنشئ المورد.
+4. انتظر حتى يكتمل النشر، ثم اعرض تفاصيل النشر.
+5. عند نشر المورد، انتقل إليه واعرض **صفحة المفاتيح ونقطة النهاية** الخاصة به. ستحتاج إلى نقطة النهاية وأحد المفاتيح من هذه الصفحة في الإجراء التالي.
+
+## الاستعداد لاستخدام Azure AI Vision SDK
+
+في هذا التمرين، ستكمل تطبيق عميل تم تنفيذه جزئياً يستخدم Azure AI Vision SDK لتحليل الوجوه في صورة.
+
+> **ملاحظة**: يمكنك اختيار استخدام SDK إما لـ **C#** أو **Python**. في الخطوات الواردة أدناه، نفذ الإجراءات المناسبة للغتك المفضلة.
+
+1. في Visual Studio Code، في جزء **Explorer**، انتقِل إلى المجلد **04-face** وقم بتوسيع المجلد **CSharp** أو **Python** حسب تفضيل اللغة لديك.
+2. انقر بزر الماوس الأيمن فوق مجلد **computer-vision** وافتح محطة طرفية متكاملة. ثم قم بتثبيت حزمة Azure AI Vision SDK عن طريق تشغيل الأمر المناسب لتفضيل اللغة لديك:
+
+    **C#**
+
+    ```
+    dotnet add package Azure.AI.Vision.ImageAnalysis -v 0.15.1-beta.1
+    ```
+
+    **Python**
+
+    ```
+    pip install azure-ai-vision==0.15.1b1
+    ```
+    
+3. اعرض محتويات مجلد **computer-vision**، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:
+    - **C#**: appsettings.json
+    - **Python**: .env
+
+4. افتح ملف التكوين وقم بتحديث قيم التكوين التي يحتوي عليها لتعكس **نقطة النهاية** و**مفتاح** المصادقة لمورد خدمات الذكاء الاصطناعي في Azure. احفظ تغييراتك.
+
+5. لاحظ أن مجلد **computer-vision** يحتوي على ملف تعليمات برمجية لتطبيق العميل:
+
+    - **C#**: Program.cs
+    - **Python**: detect-people.py
+
+6. افتح ملف التعليمات البرمجية وفي الأعلى، ضمن مراجع مساحة الاسم الموجودة، ابحث عن التعليق **استيراد مساحات الأسماء**. بعد ذلك، ضمن هذا التعليق، أضف التعليمات البرمجية التالية الخاصة باللغة لاستيراد مساحات الأسماء التي ستحتاج إليها لاستخدام Azure AI Vision SDK:
+
+    **C#**
+
+    ```C#
+    // import namespaces
+    using Azure.AI.Vision.Common;
+    using Azure.AI.Vision.ImageAnalysis;
+    ```
+
+    **Python**
+
+    ```Python
+    # import namespaces
+    import azure.ai.vision as sdk
+    ```
+
+## عرض الصورة التي ستقوم بتحليلها
+
+في هذا التمرين، ستستخدم خدمة Azure AI Vision لتحليل صورة للأشخاص.
+
+1. في Visual Studio Code، قم بتوسيع مجلد **computer-vision** ومجلد **الصور** الذي يحتوي عليه.
+2. حدد الصورة **people.jpg** لعرضها.
+
+## اكتشاف الأوجه في صورة
+
+أنت الآن جاهز لاستخدام SDK لاستدعاء خدمة Vision واكتشاف الوجوه في صورة.
+
+1. في ملف التعليمات البرمجية لتطبيق العميل (**Program.cs** أو **detect-people.py**)، في الدالة **Main**، لاحظ أنه تم توفير التعليمات البرمجية لتحميل إعدادات التكوين. ثم ابحث عن التعليق **مصادقة عميل Azure AI Vision**. ثم، ضمن هذا التعليق، أضف التعليمات البرمجية الخاصة باللغة التالية لإنشاء كائن عميل Azure AI Vision ومصادقته:
+
+    **C#**
+
+    ```C#
+    // Authenticate Azure AI Vision client
+    var cvClient = new VisionServiceOptions(
+        aiSvcEndpoint,
+        new AzureKeyCredential(aiSvcKey));
+    ```
+
+    **Python**
+
+    ```Python
+    # Authenticate Azure AI Vision client
+    cv_client = sdk.VisionServiceOptions(ai_endpoint, ai_key)
+    ```
+
+2. في الدالة **Main**، ضمن التعليمات البرمجية التي أضفتها للتو، لاحظ أن التعليمات البرمجية تحدد المسار إلى ملف صورة ثم تمرر مسار الصورة إلى دالة تسمى **AnalyzeImage**. لم يتم تنفيذ هذه الدالة بالكامل بعد.
+
+3. في الدالة **AnalyzeImage**، ضمن التعليق **حدد الميزات المراد استردادها (PEOPLE)**، أضف التعليمات البرمجية التالية:
+
+    **C#**
+
+    ```C#
+    // Specify features to be retrieved (PEOPLE)
+    Features =
+        ImageAnalysisFeature.People
+    ```
+
+    **Python**
+
+    ```Python
+    # Specify features to be retrieved (PEOPLE)
+    analysis_options = sdk.ImageAnalysisOptions()
+    
+    features = analysis_options.features = (
+        sdk.ImageAnalysisFeature.PEOPLE
+    )    
+    ```
+
+4. في الدالة **AnalyzeImage**، ضمن التعليق **الحصول على تحليل الصور**، أضف التعليمات البرمجية التالية:
+
+    **C#**
+
+    ```C
+    // Get image analysis
+    using var imageSource = VisionSource.FromFile(imageFile);
+    
+    using var analyzer = new ImageAnalyzer(serviceOptions, imageSource, analysisOptions);
+    
+    var result = analyzer.Analyze();
+    
+    if (result.Reason == ImageAnalysisResultReason.Analyzed)
+    {
+        // Get people in the image
+        if (result.People != null)
+        {
+            Console.WriteLine($" People:");
+        
+            // Prepare image for drawing
+            System.Drawing.Image image = System.Drawing.Image.FromFile(imageFile);
+            Graphics graphics = Graphics.FromImage(image);
+            Pen pen = new Pen(Color.Cyan, 3);
+            Font font = new Font("Arial", 16);
+            SolidBrush brush = new SolidBrush(Color.WhiteSmoke);
+        
+            foreach (var person in result.People)
+            {
+                // Draw object bounding box if confidence > 50%
+                if (person.Confidence > 0.5)
+                {
+                    // Draw object bounding box
+                    var r = person.BoundingBox;
+                    Rectangle rect = new Rectangle(r.X, r.Y, r.Width, r.Height);
+                    graphics.DrawRectangle(pen, rect);
+        
+                    // Return the confidence of the person detected
+                    Console.WriteLine($"   Bounding box {person.BoundingBox}, Confidence {person.Confidence:0.0000}");
+                }
+            }
+        
+            // Save annotated image
+            String output_file = "detected_people.jpg";
+            image.Save(output_file);
+            Console.WriteLine("  Results saved in " + output_file + "\n");
+        }
+    }
+    else
+    {
+        var errorDetails = ImageAnalysisErrorDetails.FromResult(result);
+        Console.WriteLine(" Analysis failed.");
+        Console.WriteLine($"   Error reason : {errorDetails.Reason}");
+        Console.WriteLine($"   Error code : {errorDetails.ErrorCode}");
+        Console.WriteLine($"   Error message: {errorDetails.Message}\n");
+    }
+    
+    ```
+
+    **Python**
+    
+    ```Python
+    # Get image analysis
+    image = sdk.VisionSource(image_file)
+    
+    image_analyzer = sdk.ImageAnalyzer(cv_client, image, analysis_options)
+    
+    result = image_analyzer.analyze()
+    
+    if result.reason == sdk.ImageAnalysisResultReason.ANALYZED:
+        # Get people in the image
+        if result.people is not None:
+            print("\nPeople in image:")
+        
+            # Prepare image for drawing
+            image = Image.open(image_file)
+            fig = plt.figure(figsize=(image.width/100, image.height/100))
+            plt.axis('off')
+            draw = ImageDraw.Draw(image)
+            color = 'cyan'
+        
+            for detected_people in result.people:
+                # Draw object bounding box if confidence > 50%
+                if detected_people.confidence > 0.5:
+                    # Draw object bounding box
+                    r = detected_people.bounding_box
+                    bounding_box = ((r.x, r.y), (r.x + r.w, r.y + r.h))
+                    draw.rectangle(bounding_box, outline=color, width=3)
+            
+                    # Return the confidence of the person detected
+                    print(" {} (confidence: {:.2f}%)".format(detected_people.bounding_box, detected_people.confidence * 100))
+                    
+            # Save annotated image
+            plt.imshow(image)
+            plt.tight_layout(pad=0)
+            outputfile = 'detected_people.jpg'
+            fig.savefig(outputfile)
+            print('  Results saved in', outputfile)
+    
+    else:
+        error_details = sdk.ImageAnalysisErrorDetails.from_result(result)
+        print(" Analysis failed.")
+        print("   Error reason: {}".format(error_details.reason))
+        print("   Error code: {}".format(error_details.error_code))
+        print("   Error message: {}".format(error_details.message))
+    ```
+
+5. احفظ التغييرات وارجع إلى الوحدة الطرفية المتكاملة لمجلد **computer-vision**، وأدخل الأمر التالي لتشغيل البرنامج:
+
+    **C#**
+
+    ```
+    dotnet run
+    ```
+
+    **Python**
+
+    ```
+    python detect-people.py
+    ```
+
+6. لاحظ الإخراج، والذي يجب أن يشير إلى عدد الوجوه التي تم اكتشافها.
+7. اعرض ملف **detected_people.jpg** الذي تم إنشاؤه في نفس المجلد كملف التعليمات البرمجية لرؤية الوجوه ذات التعليقات التوضيحية. في هذه الحالة، استخدمت التعليمات البرمجية سمات الوجه لتسمية موقع الجزء العلوي الأيسر من المربع، وينسق المربع المحيط لرسم مستطيل حول كل وجه.
+
+## الاستعداد لاستخدام Face SDK
+
+بينما توفر خدمة **Azure AI Vision** الكشف الأساسي عن الوجه (جنباً إلى جنب مع العديد من قدرات تحليل الصور الأخرى)، توفر خدمة **Face** وظائف أكثر شمولاً لتحليل الوجه والتعرف عليه.
+
+1. في Visual Studio Code، في جزء **Explorer**، انتقِل إلى المجلد **04-face** وقم بتوسيع المجلد **CSharp** أو **Python** حسب تفضيل اللغة لديك.
+2. انقر بزر الماوس الأيمن فوق مجلد **face-api** وافتح محطة طرفية متكاملة. ثم قم بتثبيت حزمة Face SDK عن طريق تشغيل الأمر المناسب لتفضيل اللغة لديك:
+
+    **C#**
+
+    ```
+    dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.8.0-preview.3
+    ```
+
+    **Python**
+
+    ```
+    pip install azure-cognitiveservices-vision-face==0.6.0
+    ```
+    
+3. اعرض محتويات مجلد **face-api**، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:
+    - **C#**: appsettings.json
+    - **Python**: .env
+
+4. افتح ملف التكوين وقم بتحديث قيم التكوين التي يحتوي عليها لتعكس **نقطة النهاية** و**مفتاح** المصادقة لمورد خدمات الذكاء الاصطناعي في Azure. احفظ تغييراتك.
+
+5. لاحظ أن مجلد **face-api** يحتوي على ملف تعليمات برمجية لتطبيق العميل:
+
+    - **C#**: Program.cs
+    - **Python**: analyze-faces.py
+
+6. افتح ملف التعليمات البرمجية وفي الأعلى، ضمن مراجع مساحة الاسم الموجودة، ابحث عن التعليق **استيراد مساحات الأسماء**. بعد ذلك، ضمن هذا التعليق، أضف التعليمات البرمجية التالية الخاصة باللغة لاستيراد مساحات الأسماء التي ستحتاج إليها لاستخدام Vision SDK:
+
+    **C#**
+
+    ```C#
+    // Import namespaces
+    using Microsoft.Azure.CognitiveServices.Vision.Face;
+    using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
+    ```
+
+    **Python**
+
+    ```Python
+    # Import namespaces
+    from azure.cognitiveservices.vision.face import FaceClient
+    from azure.cognitiveservices.vision.face.models import FaceAttributeType
+    from msrest.authentication import CognitiveServicesCredentials
+    ```
+
+7. في الدالة **Main**، لاحظ أنه تم توفير التعليمات البرمجية لتحميل إعدادات التكوين. ثم ابحث عن التعليق **مصادقة عميل Face**. ثم، ضمن هذا التعليق، أضف التعليمات البرمجية الخاصة باللغة التالية لإنشاء كائن **FaceClient** ومصادقته:
+
+    **C#**
+
+    ```C#
+    // Authenticate Face client
+    ApiKeyServiceClientCredentials credentials = new ApiKeyServiceClientCredentials(cogSvcKey);
+    faceClient = new FaceClient(credentials)
+    {
+        Endpoint = cogSvcEndpoint
+    };
+    ```
+
+    **Python**
+
+    ```Python
+    # Authenticate Face client
+    credentials = CognitiveServicesCredentials(cog_key)
+    face_client = FaceClient(cog_endpoint, credentials)
+    ```
+
+8. في الدالة **Main**، ضمن التعليمات البرمجية التي أضفتها للتو، لاحظ أن التعليمات البرمجية تعرض قائمة تمكّنك من استدعاء الوظائف في التعليمات البرمجية لاستكشاف قدرات خدمة Face. ستقوم بتنفيذ هذه الدالات في باقي هذا التمرين.
+
+## الكشف عن الوجوه وتحليلها
+
+يُعد الكشف عن الوجوه في صورة، وتحديد سماتها، مثل وضع الرأس، والتمويه، ووجود المشاهد، وما إلى ذلك إحدى القدرات الأساسية لخدمة Face.
+
+1. في ملف التعليمات البرمجية للتطبيق الخاص بك، في الدالة **Main** ، افحص التعليمات البرمجية التي يتم تشغيلها إذا حدد المستخدم خيار القائمة **1**. تستدعي هذه التعليمة البرمجية دالة **DetectFaces**، لتمرير المسار إلى ملف صورة.
+2. ابحث عن الدالة **DetectFaces** في ملف التعليمات البرمجية، وضمن التعليق **حدد ميزات الوجه المراد استردادها**، أضف التعليمات البرمجية التالية:
+
+    **C#**
+
+    ```C#
+    // Specify facial features to be retrieved
+    IList<FaceAttributeType> features = new FaceAttributeType[]
+    {
+        FaceAttributeType.Occlusion,
+        FaceAttributeType.Blur,
+        FaceAttributeType.Glasses
+    };
+    ```
+
+    **Python**
+
+    ```Python
+    # Specify facial features to be retrieved
+    features = [FaceAttributeType.occlusion,
+                FaceAttributeType.blur,
+                FaceAttributeType.glasses]
+    ```
+
+3. في الدالة **DetectFaces**، ضمن التعليمات البرمجية التي أضفتها للتو، ابحث عن التعليق **Get faces** وأضف التعليمات البرمجية التالية:
+
+**C#**
+
+```C
+// Get faces
+using (var imageData = File.OpenRead(imageFile))
+{    
+    var detected_faces = await faceClient.Face.DetectWithStreamAsync(imageData, returnFaceAttributes: features, returnFaceId: false);
+
+    if (detected_faces.Count() > 0)
+    {
+        Console.WriteLine($"{detected_faces.Count()} faces detected.");
+
+        // Prepare image for drawing
+        Image image = Image.FromFile(imageFile);
+        Graphics graphics = Graphics.FromImage(image);
+        Pen pen = new Pen(Color.LightGreen, 3);
+        Font font = new Font("Arial", 4);
+        SolidBrush brush = new SolidBrush(Color.White);
+        int faceCount=0;
+
+        // Draw and annotate each face
+        foreach (var face in detected_faces)
+        {
+            faceCount++;
+            Console.WriteLine($"\nFace number {faceCount}");
+            
+            // Get face properties
+            Console.WriteLine($" - Mouth Occluded: {face.FaceAttributes.Occlusion.MouthOccluded}");
+            Console.WriteLine($" - Eye Occluded: {face.FaceAttributes.Occlusion.EyeOccluded}");
+            Console.WriteLine($" - Blur: {face.FaceAttributes.Blur.BlurLevel}");
+            Console.WriteLine($" - Glasses: {face.FaceAttributes.Glasses}");
+
+            // Draw and annotate face
+            var r = face.FaceRectangle;
+            Rectangle rect = new Rectangle(r.Left, r.Top, r.Width, r.Height);
+            graphics.DrawRectangle(pen, rect);
+            string annotation = $"Face number {faceCount}";
+            graphics.DrawString(annotation,font,brush,r.Left, r.Top);
+        }
+
+        // Save annotated image
+        String output_file = "detected_faces.jpg";
+        image.Save(output_file);
+        Console.WriteLine(" Results saved in " + output_file);   
+    }
+}
+```
+
+**Python**
+
+```Python
+# Get faces
+with open(image_file, mode="rb") as image_data:
+    detected_faces = face_client.face.detect_with_stream(image=image_data,
+                                                            return_face_attributes=features,                     return_face_id=False)
+
+    if len(detected_faces) > 0:
+        print(len(detected_faces), 'faces detected.')
+
+        # Prepare image for drawing
+        fig = plt.figure(figsize=(8, 6))
+        plt.axis('off')
+        image = Image.open(image_file)
+        draw = ImageDraw.Draw(image)
+        color = 'lightgreen'
+        face_count = 0
+
+        # Draw and annotate each face
+        for face in detected_faces:
+
+            # Get face properties
+            face_count += 1
+            print('\nFace number {}'.format(face_count))
+
+            detected_attributes = face.face_attributes.as_dict()
+            if 'blur' in detected_attributes:
+                print(' - Blur:')
+                for blur_name in detected_attributes['blur']:
+                    print('   - {}: {}'.format(blur_name, detected_attributes['blur'][blur_name]))
+                    
+            if 'occlusion' in detected_attributes:
+                print(' - Occlusion:')
+                for occlusion_name in detected_attributes['occlusion']:
+                    print('   - {}: {}'.format(occlusion_name, detected_attributes['occlusion'][occlusion_name]))
+
+            if 'glasses' in detected_attributes:
+                print(' - Glasses:{}'.format(detected_attributes['glasses']))
+
+            # Draw and annotate face
+            r = face.face_rectangle
+            bounding_box = ((r.left, r.top), (r.left + r.width, r.top + r.height))
+            draw = ImageDraw.Draw(image)
+            draw.rectangle(bounding_box, outline=color, width=5)
+            annotation = 'Face number {}'.format(face_count)
+            plt.annotate(annotation,(r.left, r.top), backgroundcolor=color)
+
+        # Save annotated image
+        plt.imshow(image)
+        outputfile = 'detected_faces.jpg'
+        fig.savefig(outputfile)
+
+        print('\nResults saved in', outputfile)
+```
+
+4. افحص التعليمات البرمجية التي أضفتها إلى الدالة **DetectFaces**. فهو يحلل ملف صورة ويكتشف أي وجوه يحتوي عليها، بما في ذلك سمات الانسداد والتمويه ووجود المشاهدين. يتم عرض تفاصيل كل وجه، بما في ذلك معرف وجه فريد يتم تعيينه لكل وجه؛ ويشار إلى موقع الوجوه على الصورة باستخدام مربع إحاطة.
+5. احفظ التغييرات وارجع إلى الوحدة الطرفية المتكاملة لمجلد **face-api**، وأدخل الأمر التالي لتشغيل البرنامج:
+
+    **C#**
+
+    ```
+    dotnet run
+    ```
+
+    *قد يعرض إخراج C# تحذيرات حول الوظائف غير المتزامنة الآن باستخدام عامل التشغيل **await** . يمكنك تجاهل هذه.*
+
+    **Python**
+
+    ```
+    python analyze-faces.py
+    ```
+
+6. عند المطالبة، أدخل **1** ولاحظ الإخراج، والذي يجب أن يتضمن معرف وسمات كل وجه تم اكتشافه.
+7. اعرض ملف **detected_faces.jpg** الذي تم إنشاؤه في نفس المجلد كملف التعليمات البرمجية لرؤية الوجوه ذات التعليقات التوضيحية.
+
+## مزيد من المعلومات
+
+هناك العديد من الميزات الإضافية المتوفرة داخل خدمة **Face**، ولكن بعد [معيار الذكاء الاصطناعي المسؤول](https://aka.ms/aah91ff)، يتم تقييد هذه الميزات بما يتجاوز نهج الوصول المحدود. تتضمن هذه الميزات تحديد نماذج التعرف على الوجه والتحقق منها وإنشاءها. لمعرفة المزيد والتقدم للحصول على الوصول، راجع [الوصول المحدود لخدمات الذكاء الاصطناعي في Azure](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-limited-access).
+
+لمزيد من المعلومات حول استخدام خدمة **Azure AI Vision** للكشف عن الوجه، راجع [وثائق Azure AI Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-detecting-faces).
+
+لمعرفة المزيد حول خدمة **Face**، راجع [وثائق Face](https://docs.microsoft.com/azure/cognitive-services/face/).
