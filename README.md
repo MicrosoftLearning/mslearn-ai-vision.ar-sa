@@ -1,1 +1,2 @@
-# mslearn-ai-vision.ar-sa
+# mslearn-ai-vision
+ملفات الواجب لوحدات بحث الذكاء الاصطناعي في Azure الضوئي
