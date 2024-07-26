@@ -473,9 +473,9 @@ body = {
 response = requests.post(url, headers=headers, json=body)
 
 image=response.content
-with open("backgroundForeground.png", "wb") as file:
+with open("background.png", "wb") as file:
     file.write(image)
-print('  Results saved in backgroundForeground.png \n')
+print('  Results saved in background.png \n')
 ```
     
 2. احفظ التغييرات وشغل البرنامج مرة واحدة لكل ملف من ملفات الصور في مجلد **الصور** ما يفتح ملف **background.png** الذي يجري إنشاؤه في المجلد نفسه مثل ملف التعليمات البرمجية لكل صورة.  لاحظ كيفية إزالة الخلفية من كل الصور.
