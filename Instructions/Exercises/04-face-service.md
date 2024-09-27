@@ -17,17 +17,17 @@ lab:
 إذا لم تقم بالاستنساخ بالفعل، يجب عليك استنساخ مستودع التعليمات البرمجية لهذه الدورة التدريبية:
 
 1. ابدأ تشغيل Visual Studio Code.
-2. افتح لوحة (SHIFT+CTRL+P) وشغّل **Git: استنسخ الأمر** لاستنساخ مستودع `https://github.com/MicrosoftLearning/mslearn-ai-vision` إلى مجلد محلي (لا يُهم أي مجلد).
-3. عند استنساخ المستودع، افتح المجلد في Visual Studio Code.
-4. انتظر حتى يتم تثبيت ملفات إضافية لدعم مشاريع التعليمات البرمجية C# في المستودع.
+2. افتح لوحة (SHIFT+CTRL+P) وشغّل **Git: استنسخ الأمر ** لاستنساخ مستودع `https://github.com/MicrosoftLearning/mslearn-ai-vision` إلى مجلد محلي (لا يُهم أي مجلد).
+3. عند استنساخ المستودع، افتح المجلد في تعليمة Visual Studio البرمجية.
+4. انتظر حتى تثبيت ملفات إضافية لدعم مشاريع التعليمات البرمجية C# في المستودع.
 
     > **ملاحظة**: إذا تمت مطالبتك بإضافة الأصول المطلوبة للبناء وتصحيح الأخطاء، فحدد **ليس الآن**.
 
 ## توفير مورد خدمات الذكاء الاصطناعي في Azure
 
-إذا لم يكن لديك بالفعل واحد في اشتراكك، فسيتعين عليك توفير مورد **خدمات الذكاء الاصطناعي في Azure**.
+إذا لم يكن لديك بالفعل مورد في اشتراكك، فسيتعين عليك توفير مورد **خدمات الذكاء الاصطناعي في Azure**.
 
-1. افتح مدخل Azure على `https://portal.azure.com`، وقم بتسجيل الدخول باستخدام حساب Microsoft المقترن باشتراك Azure.
+1. افتح مدخل Azure على `https://portal.azure.com`، وسجل الدخول باستخدام حساب Microsoft المقترن باشتراك Azure.
 2. في شريط البحث العلوي، ابحث عن *خدمات الذكاء الاصطناعي في Azure*، وحدد **خدمات الذكاء الاصطناعي في Azure**، وأنشئ مورد حساب متعدد الخدمات لخدمات الذكاء الاصطناعي في Azure بالإعدادات التالية:
     - **Subscription**: *اشتراكك في Azure*
     - **مجموعة الموارد**: *اختر أو أنشئ مجموعة موارد (إذا كنت تستخدم اشتراكًا مقيدًا، فقد لا يكون لديك إذن لإنشاء مجموعة موارد جديدة - استخدم المجموعة المتوفرة)*
@@ -50,20 +50,20 @@ lab:
     **C#**
 
     ```
-    dotnet add package Azure.AI.Vision.ImageAnalysis -v 0.15.1-beta.1
+    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.3
     ```
 
     **Python**
 
     ```
-    pip install azure-ai-vision==0.15.1b1
+    pip install azure-ai-vision==1.0.0b3
     ```
     
 3. اعرض محتويات مجلد **computer-vision**، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:
     - **C#**: appsettings.json
     - **Python**: .env
 
-4. افتح ملف التكوين وقم بتحديث قيم التكوين التي يحتوي عليها لتعكس **نقطة النهاية** و**مفتاح** المصادقة لمورد خدمات الذكاء الاصطناعي في Azure. احفظ تغييراتك.
+4. يمكنك فتح ملف التكوين وتحديث قيم التكوين التي يحتوي عليها لتعكس **نقطة النهاية** و**مفتاح** المصادقة لمورد خدمات الذكاء الاصطناعي في Azure. احفظ تغييراتك.
 
 5. لاحظ أن مجلد **computer-vision** يحتوي على ملف تعليمات برمجية لتطبيق العميل:
 
@@ -75,8 +75,7 @@ lab:
     **C#**
 
     ```C#
-    // import namespaces
-    using Azure.AI.Vision.Common;
+    // Import namespaces
     using Azure.AI.Vision.ImageAnalysis;
     ```
 
@@ -84,7 +83,9 @@ lab:
 
     ```Python
     # import namespaces
-    import azure.ai.vision as sdk
+    from azure.ai.vision.imageanalysis import ImageAnalysisClient
+    from azure.ai.vision.imageanalysis.models import VisualFeatures
+    from azure.core.credentials import AzureKeyCredential
     ```
 
 ## عرض الصورة التي ستقوم بتحليلها
@@ -98,14 +99,14 @@ lab:
 
 أنت الآن جاهز لاستخدام SDK لاستدعاء خدمة Vision واكتشاف الوجوه في صورة.
 
-1. في ملف التعليمات البرمجية لتطبيق العميل (**Program.cs** أو **detect-people.py**)، في الدالة **Main**، لاحظ أنه تم توفير التعليمات البرمجية لتحميل إعدادات التكوين. ثم ابحث عن التعليق **مصادقة عميل Azure AI Vision**. ثم، ضمن هذا التعليق، أضف التعليمات البرمجية الخاصة باللغة التالية لإنشاء كائن عميل Azure AI Vision ومصادقته:
+1. في ملف التعليمات البرمجية لتطبيق العميل (**Program.cs** أو **detect-people.py**)، في الدالة **Main**، لاحظ أنه تم توفير التعليمات البرمجية لتحميل إعدادات التكوين. ثم ابحث عن التعليق **مصادقة عميل Azure AI Vision**. ثم، ضمن هذا التعليق، أضف التعليمات البرمجية الخاصة باللغة التالية لإنشاء كائن عميل الذكاء الاصطناعي في Azure Vision ومصادقته:
 
     **C#**
 
     ```C#
     // Authenticate Azure AI Vision client
-    var cvClient = new VisionServiceOptions(
-        aiSvcEndpoint,
+    ImageAnalysisClient cvClient = new ImageAnalysisClient(
+        new Uri(aiSvcEndpoint),
         new AzureKeyCredential(aiSvcKey));
     ```
 
@@ -113,136 +114,70 @@ lab:
 
     ```Python
     # Authenticate Azure AI Vision client
-    cv_client = sdk.VisionServiceOptions(ai_endpoint, ai_key)
+    cv_client = ImageAnalysisClient(
+        endpoint=ai_endpoint,
+        credential=AzureKeyCredential(ai_key)
+    )
     ```
 
 2. في الدالة **Main**، ضمن التعليمات البرمجية التي أضفتها للتو، لاحظ أن التعليمات البرمجية تحدد المسار إلى ملف صورة ثم تمرر مسار الصورة إلى دالة تسمى **AnalyzeImage**. لم يتم تنفيذ هذه الدالة بالكامل بعد.
 
-3. في الدالة **AnalyzeImage**، ضمن التعليق **حدد الميزات المراد استردادها (PEOPLE)**، أضف التعليمات البرمجية التالية:
+3. في الدالة **AnalyzeImage**، ضمن التعليق **الحصول على النتيجة بالميزات المحددة التي سيتم استردادها (الأشخاص)**، أضف التعليمة البرمجية التالية:
 
     **C#**
 
     ```C#
-    // Specify features to be retrieved (PEOPLE)
-    Features =
-        ImageAnalysisFeature.People
+    // Get result with specified features to be retrieved (PEOPLE)
+    ImageAnalysisResult result = client.Analyze(
+        BinaryData.FromStream(stream),
+        VisualFeatures.People);
     ```
 
     **Python**
 
     ```Python
-    # Specify features to be retrieved (PEOPLE)
-    analysis_options = sdk.ImageAnalysisOptions()
-    
-    features = analysis_options.features = (
-        sdk.ImageAnalysisFeature.PEOPLE
-    )    
+    # Get result with specified features to be retrieved (PEOPLE)
+    result = cv_client.analyze(
+        image_data=image_data,
+        visual_features=[
+            VisualFeatures.PEOPLE],
+    )
     ```
 
-4. في الدالة **AnalyzeImage**، ضمن التعليق **الحصول على تحليل الصور**، أضف التعليمات البرمجية التالية:
+4. في الدالة **AnalyzeImage**، ضمن التعليق **رسم مربع إحاطة حول الأشخاص المكتشفين**، أضف التعليمة البرمجية التالية:
 
     **C#**
 
     ```C
-    // Get image analysis
-    using var imageSource = VisionSource.FromFile(imageFile);
-    
-    using var analyzer = new ImageAnalyzer(serviceOptions, imageSource, analysisOptions);
-    
-    var result = analyzer.Analyze();
-    
-    if (result.Reason == ImageAnalysisResultReason.Analyzed)
+    // Draw bounding box around detected people
+    foreach (DetectedPerson person in result.People.Values)
     {
-        // Get people in the image
-        if (result.People != null)
+        if (person.Confidence > 0.5) 
         {
-            Console.WriteLine($" People:");
-        
-            // Prepare image for drawing
-            System.Drawing.Image image = System.Drawing.Image.FromFile(imageFile);
-            Graphics graphics = Graphics.FromImage(image);
-            Pen pen = new Pen(Color.Cyan, 3);
-            Font font = new Font("Arial", 16);
-            SolidBrush brush = new SolidBrush(Color.WhiteSmoke);
-        
-            foreach (var person in result.People)
-            {
-                // Draw object bounding box if confidence > 50%
-                if (person.Confidence > 0.5)
-                {
-                    // Draw object bounding box
-                    var r = person.BoundingBox;
-                    Rectangle rect = new Rectangle(r.X, r.Y, r.Width, r.Height);
-                    graphics.DrawRectangle(pen, rect);
-        
-                    // Return the confidence of the person detected
-                    Console.WriteLine($"   Bounding box {person.BoundingBox}, Confidence {person.Confidence:0.0000}");
-                }
-            }
-        
-            // Save annotated image
-            String output_file = "detected_people.jpg";
-            image.Save(output_file);
-            Console.WriteLine("  Results saved in " + output_file + "\n");
+            // Draw object bounding box
+            var r = person.BoundingBox;
+            Rectangle rect = new Rectangle(r.X, r.Y, r.Width, r.Height);
+            graphics.DrawRectangle(pen, rect);
         }
+
+        // Return the confidence of the person detected
+        //Console.WriteLine($"   Bounding box {person.BoundingBox.ToString()}, Confidence: {person.Confidence:F2}");
     }
-    else
-    {
-        var errorDetails = ImageAnalysisErrorDetails.FromResult(result);
-        Console.WriteLine(" Analysis failed.");
-        Console.WriteLine($"   Error reason : {errorDetails.Reason}");
-        Console.WriteLine($"   Error code : {errorDetails.ErrorCode}");
-        Console.WriteLine($"   Error message: {errorDetails.Message}\n");
-    }
-    
     ```
 
     **Python**
     
     ```Python
-    # Get image analysis
-    image = sdk.VisionSource(image_file)
-    
-    image_analyzer = sdk.ImageAnalyzer(cv_client, image, analysis_options)
-    
-    result = image_analyzer.analyze()
-    
-    if result.reason == sdk.ImageAnalysisResultReason.ANALYZED:
-        # Get people in the image
-        if result.people is not None:
-            print("\nPeople in image:")
-        
-            # Prepare image for drawing
-            image = Image.open(image_file)
-            fig = plt.figure(figsize=(image.width/100, image.height/100))
-            plt.axis('off')
-            draw = ImageDraw.Draw(image)
-            color = 'cyan'
-        
-            for detected_people in result.people:
-                # Draw object bounding box if confidence > 50%
-                if detected_people.confidence > 0.5:
-                    # Draw object bounding box
-                    r = detected_people.bounding_box
-                    bounding_box = ((r.x, r.y), (r.x + r.w, r.y + r.h))
-                    draw.rectangle(bounding_box, outline=color, width=3)
-            
-                    # Return the confidence of the person detected
-                    print(" {} (confidence: {:.2f}%)".format(detected_people.bounding_box, detected_people.confidence * 100))
-                    
-            # Save annotated image
-            plt.imshow(image)
-            plt.tight_layout(pad=0)
-            outputfile = 'detected_people.jpg'
-            fig.savefig(outputfile)
-            print('  Results saved in', outputfile)
-    
-    else:
-        error_details = sdk.ImageAnalysisErrorDetails.from_result(result)
-        print(" Analysis failed.")
-        print("   Error reason: {}".format(error_details.reason))
-        print("   Error code: {}".format(error_details.error_code))
-        print("   Error message: {}".format(error_details.message))
+    # Draw bounding box around detected people
+    for detected_people in result.people.list:
+        if(detected_people.confidence > 0.5):
+            # Draw object bounding box
+            r = detected_people.bounding_box
+            bounding_box = ((r.x, r.y), (r.x + r.width, r.y + r.height))
+            draw.rectangle(bounding_box, outline=color, width=3)
+
+        # Return the confidence of the person detected
+        #print(" {} (confidence: {:.2f}%)".format(detected_people.bounding_box, detected_people.confidence * 100))
     ```
 
 5. احفظ التغييرات وارجع إلى الوحدة الطرفية المتكاملة لمجلد **computer-vision**، وأدخل الأمر التالي لتشغيل البرنامج:
@@ -260,7 +195,9 @@ lab:
     ```
 
 6. لاحظ الإخراج، والذي يجب أن يشير إلى عدد الوجوه التي تم اكتشافها.
-7. اعرض ملف **detected_people.jpg** الذي تم إنشاؤه في نفس المجلد كملف التعليمات البرمجية لرؤية الوجوه ذات التعليقات التوضيحية. في هذه الحالة، استخدمت التعليمات البرمجية سمات الوجه لتسمية موقع الجزء العلوي الأيسر من المربع، وينسق المربع المحيط لرسم مستطيل حول كل وجه.
+7. اعرض الملف **people.jpg** الذي تم إنشاؤه في نفس المجلد الذي يحتوي على ملف التعليمات البرمجية الخاص بك لرؤية الوجوه الموضحة. في هذه الحالة، استخدمت التعليمات البرمجية سمات الوجه لتسمية موقع الجزء العلوي الأيسر من المربع، وينسق المربع المحيط لرسم مستطيل حول كل وجه.
+
+إذا كنت ترغب في رؤية درجة الثقة لجميع الأشخاص الذين اكتشفتهم الخدمة، يمكنك إلغاء التعليق على سطر التعليمات البرمجية ضمن التعليق `Return the confidence of the person detected` وإعادة تشغيل التعليمات البرمجية.
 
 ## الاستعداد لاستخدام Face SDK
 
@@ -285,7 +222,7 @@ lab:
     - **C#**: appsettings.json
     - **Python**: .env
 
-4. افتح ملف التكوين وقم بتحديث قيم التكوين التي يحتوي عليها لتعكس **نقطة النهاية** و**مفتاح** المصادقة لمورد خدمات الذكاء الاصطناعي في Azure. احفظ تغييراتك.
+4. يمكنك فتح ملف التكوين وتحديث قيم التكوين التي يحتوي عليها لتعكس **نقطة النهاية** و**مفتاح** المصادقة لمورد خدمات الذكاء الاصطناعي في Azure. احفظ تغييراتك.
 
 5. لاحظ أن مجلد **face-api** يحتوي على ملف تعليمات برمجية لتطبيق العميل:
 
@@ -477,7 +414,7 @@ with open(image_file, mode="rb") as image_data:
     dotnet run
     ```
 
-    *قد يعرض إخراج C# تحذيرات حول الوظائف غير المتزامنة الآن باستخدام عامل التشغيل **await** . يمكنك تجاهل هذه.*
+    *قد يعرض إخراج C# تحذيرات حول الدوال غير المتزامنة الآن باستخدام عامل التشغيل **await** . يمكنك تجاهل هذه التحذيرات.*
 
     **Python**
 
