@@ -49,7 +49,7 @@ lab:
     **C#**
     
     ```
-    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.1
+    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.3
     ```
 
     > **ملاحظة**: إذا جرت مطالبتك بتثبيت ملحقات مجموعة أدوات التطوير، يمكنك إغلاق الرسالة بأمان.
@@ -57,7 +57,7 @@ lab:
     **Python**
     
     ```
-    pip install azure-ai-vision-imageanalysis==1.0.0b1
+    pip install azure-ai-vision-imageanalysis==1.0.0b3
     ```
 
 3. اعرض محتويات مجلد **read-text**، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:
@@ -70,7 +70,7 @@ lab:
 
 ## استخدم Azure AI Vision SDK لقراءة النص من الصورة
 
-إحدى ميزات **Azure AI Vision SDK** هي قراءة النص من الصورة. في هذا التمرين، ستكمل تطبيق عميل جرى تنفيذه جزئياً يستخدم Azure AI Vision SDK لقراءة النص من صورة.
+إحدى ميزات **الذكاء الاصطناعي في Azure Vision SDK** هي قراءة النص من صورة. في هذا التمرين، ستكمل تطبيق عميل جرى تنفيذه جزئياً يستخدم Azure AI Vision SDK لقراءة النص من صورة.
 
 1. لاحظ أن مجلد **read-text** يحتوي على ملف تعليمات برمجية لتطبيق العميل:
 
