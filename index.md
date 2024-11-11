@@ -11,7 +11,5 @@ layout: home
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Exercises'" %}
 
-{% for activity in labs  %} {% if activity.lab.title contains "Azure AI Custom Vision" %}  
-    {% continue %}  
-  {% endif %} 
+{% للأنشطة في المعامل %} 
   - [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) {% endfor %}
