@@ -6,7 +6,7 @@ lab:
 
 # تحليل الصور باستخدام الذكاء الاصطناعي في Azure Vision
 
-الذكاء الاصطناعي في Azure Vision عبارة عن قدرة ذكاء اصطناعي تمكن أنظمة البرامج من تفسير المدخلات المرئية من خلال تحليل الصور. في Microsoft Azure، توفر خدمة الذكاء الاصطناعي في Azure **Vision** نماذج معدة مسبقاً لمهام رؤية الكمبيوتر الشائعة، بما في ذلك تحليل الصور لاقتراح التسميات التوضيحية والعلامات، واكتشاف الأشياء والأشخاص الشائعين. يمكنك أيضا استخدام خدمة الذكاء الاصطناعي في Azure Vision لإزالة الخلفية أو إنشاء احتواء أمامي للصور.
+الذكاء الاصطناعي في Azure Vision عبارة عن قدرة ذكاء اصطناعي تمكن أنظمة البرامج من تفسير المدخلات المرئية من خلال تحليل الصور. في Microsoft Azure، توفر خدمة الذكاء الاصطناعي في Azure **Vision** نماذج معدة مسبقاً لمهام رؤية الكمبيوتر الشائعة، بما في ذلك تحليل الصور لاقتراح التسميات التوضيحية والعلامات، واكتشاف الأشياء والأشخاص الشائعين. 
 
 ## استنساخ المستودع لهذه الدورة التدريبية
 
@@ -408,86 +408,6 @@ if result.people is not None:
 3. احفظ التغييرات وشغل البرنامج مرة واحدة لكل ملف من ملفات **الصور** الموجودة في مجلد الصور، مع ملاحظة أي كائنات يجري اكتشافها. بعد كل تشغيل، اعرض ملف **Objects.jpg** الذي جرى إنشاؤه في نفس المجلد مثل ملف التعليمات البرمجية الخاص بك لرؤية الكائنات ذات التعليقات التوضيحية.
 
 > **ملاحظة**: في المهام السابقة، استخدمت أسلوباً واحداً لتحليل الصورة، ثم أضفت التعليمات البرمجية بشكل متزايد لتحليل النتائج وعرضها. توفر SDK أيضاً أساليب فردية لاقتراح التسميات التوضيحية، وتحديد العلامات، والكشف عن العناصر، وما إلى ذلك - ما يعني أنه يمكنك استخدام الطريقة الأكثر ملاءمة لإرجاع المعلومات التي تحتاج إليها فقط، ما يقلل من حجم حمولة البيانات التي تحتاج إلى إرجاعها. راجع وثائق [.NET SDK](https://learn.microsoft.com/dotnet/api/overview/azure/cognitiveservices/computervision?view=azure-dotnet) أو [وثائق Python SDK](https://learn.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision) لمزيد من التفاصيل.
-
-## إزالة الخلفية أو إنشاء لون غير لامع في المقدمة لصورة
-
-في بعض الحالات، قد تحتاج إلى إزالة خلفية الصورة أو قد ترغب في إنشاء لون غير لامع لمقدمة تلك الصورة. لنبدأ بإزالة الخلفية.
-
-1. في ملف التعليمات البرمجية، ابحث عن الدالة **BackgroundForeground**، وضمن التعليق **إزالة الخلفية من الصورة أو إنشاء خلفية غير لامعة**، أضف التعليمات البرمجية التالية:
-
-**C#**
-
-```C#
-// Remove the background from the image or generate a foreground matte
-Console.WriteLine($" Background removal:");
-// Define the API version and mode
-string apiVersion = "2023-02-01-preview";
-string mode = "backgroundRemoval"; // Can be "foregroundMatting" or "backgroundRemoval"
-
-string url = $"computervision/imageanalysis:segment?api-version={apiVersion}&mode={mode}";
-
-// Make the REST call
-using (var client = new HttpClient())
-{
-    var contentType = new MediaTypeWithQualityHeaderValue("application/json");
-    client.BaseAddress = new Uri(endpoint);
-    client.DefaultRequestHeaders.Accept.Add(contentType);
-    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
-
-    var data = new
-    {
-        url = $"https://github.com/MicrosoftLearning/mslearn-ai-vision/blob/main/Labfiles/01-analyze-images/Python/image-analysis/{imageFile}?raw=true"
-    };
-
-    var jsonData = JsonSerializer.Serialize(data);
-    var contentData = new StringContent(jsonData, Encoding.UTF8, contentType);
-    var response = await client.PostAsync(url, contentData);
-
-    if (response.IsSuccessStatusCode) {
-        File.WriteAllBytes("background.png", response.Content.ReadAsByteArrayAsync().Result);
-        Console.WriteLine("  Results saved in background.png\n");
-    }
-    else
-    {
-        Console.WriteLine($"API error: {response.ReasonPhrase} - Check your body url, key, and endpoint.");
-    }
-}
-```
-
-**Python**
-
-```Python
-# Remove the background from the image or generate a foreground matte
-print('\nRemoving background from image...')
-    
-url = "{}computervision/imageanalysis:segment?api-version={}&mode={}".format(endpoint, api_version, mode)
-
-headers= {
-    "Ocp-Apim-Subscription-Key": key, 
-    "Content-Type": "application/json" 
-}
-
-image_url="https://github.com/MicrosoftLearning/mslearn-ai-vision/blob/main/Labfiles/01-analyze-images/Python/image-analysis/{}?raw=true".format(image_file)  
-
-body = {
-    "url": image_url,
-}
-    
-response = requests.post(url, headers=headers, json=body)
-
-image=response.content
-with open("background.png", "wb") as file:
-    file.write(image)
-print('  Results saved in background.png \n')
-```
-    
-2. احفظ التغييرات وشغل البرنامج مرة واحدة لكل ملف من ملفات الصور في مجلد **الصور** ما يفتح ملف **background.png** الذي يجري إنشاؤه في المجلد نفسه مثل ملف التعليمات البرمجية لكل صورة.  لاحظ كيفية إزالة الخلفية من كل الصور.
-
-لننشئ الآن لون غير لامع للمقدمة لصورنا.
-
-3. في ملف التعليمات البرمجية الخاص بك، ابحث عن دالة **BackgroundForeground**؛ وتحت التعليق **تحديد إصدار API ووضعه**، يمكن تغيير متغير الوضع ليكون `foregroundMatting`.
-
-4. احفظ التغييرات وشغل البرنامج مرة واحدة لكل ملف من ملفات الصور في مجلد **الصور** ما يفتح ملف **background.png** الذي يجري إنشاؤه في المجلد نفسه مثل ملف التعليمات البرمجية لكل صورة.  لاحظ كيف جرى إنشاء مقدمة غير لامعة لصورك.
 
 ## تنظيف الموارد
 
