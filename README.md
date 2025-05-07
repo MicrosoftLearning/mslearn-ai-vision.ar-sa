@@ -1,10 +1,10 @@
-#README
+# تطوير حلول الرؤية الحاسوبية في Azure
 
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
+تم تصميم التمارين الموجودة في مخزن البيانات الخاصة هذا لتزويدك بتجربة تعليمية عملية تستكشف فيها المهام الشائعة التي يقوم بها المطورون عند إنشاء حلول الرؤية الحاسوبية على Microsoft Azure.
 
-Provide feedback here: https://aka.ms/provide-feedback
+> **ملاحظة**: لاستكمال التدريبات، ستحتاج إلى اشتراك Azure الذي تتمتع فيه بالأذونات والحصة النسبية الكافية لتوفير موارد Azure ونماذج الذكاء الاصطناعي التوليدي اللازمة. إذا لم يكن لديك حسابًا مسبقًا، فيمكنك التسجيل للحصول على [حساب Azure](https://azure.microsoft.com/free). هناك خيار تجريبي مجاني للمستخدمين الجدد يتضمن رصيدًا لأول 30 يومًا.
 
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
+[عرض التمارين في موقع GitHub Pages لمخزن البيانات الخاصة هذا](https://go.microsoft.com/fwlink/?linkid=2318640)
 
-# mslearn-ai-vision
-ملفات الواجب لوحدات بحث الذكاء الاصطناعي في Azure الضوئي
+> **ملاحظة**: على الرغم من أنه يمكنك إكمال هذه التدريبات بمفردها، إلا أنها مصممة لاستكمال الوحدات الموجودة على [Microsoft Learn](https://learn.microsoft.com/training/paths/create-computer-vision-solutions-azure-ai/)؛ حيث ستجد تعمقًا في بعض المفاهيم الأساسية التي تستند إليها هذه التدريبات.
+
