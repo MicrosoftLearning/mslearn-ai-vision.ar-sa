@@ -1,15 +1,17 @@
 ---
-title: تمارين رؤية الذكاء الاصطناعي في Azure
+title: تطوير حلول الرؤية الحاسوبية في Azure
 permalink: index.html
 layout: home
 ---
 
-# تمارين رؤية الذكاء الاصطناعي في Azure
+تم تصميم التمارين التالية لتزويدك بتجربة تعليمية عملية تستكشف فيها المهام الشائعة التي يقوم بها المطورون عند إنشاء حلول الرؤية الحاسوبية على Microsoft Azure.
 
-تم تصميم التدريبات التالية لدعم الوحدات النمطية على Microsoft Learn.
+> **ملاحظة**: لاستكمال التدريبات، ستحتاج إلى اشتراك Azure الذي تتمتع فيه بالأذونات والحصة النسبية الكافية لتوفير موارد Azure ونماذج الذكاء الاصطناعي التوليدي اللازمة. إذا لم يكن لديك حسابًا مسبقًا، فيمكنك التسجيل للحصول على [حساب Azure](https://azure.microsoft.com/free). هناك خيار تجريبي مجاني للمستخدمين الجدد يتضمن رصيدًا لأول 30 يومًا.
 
+## التدريبات
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Exercises'" %}
+{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %} {% for activity in labs  %}
+<hr>
+### [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) {{activity.lab.description}} {% endfor %}
 
-{% for activity in labs %} {% if activity.url contains 'ai-foundry' %} {% continue %} {% endif %}
-  - [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) {% endfor %}
+> **ملاحظة**: على الرغم من أنه يمكنك إكمال هذه التدريبات بمفردها، إلا أنها مصممة لاستكمال الوحدات الموجودة على [Microsoft Learn](https://learn.microsoft.com/training/paths/create-computer-vision-solutions-azure-ai/)؛ حيث ستجد تعمقًا في بعض المفاهيم الأساسية التي تستند إليها هذه التدريبات.
