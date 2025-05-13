@@ -1,5 +1,4 @@
-<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div dir="rtl"><markdown-accessiblity-table data-catalyst=""><table>
-
+<div class="Box-sc-g0xbh4-0 eoaCFS js-snippet-clipboard-copy-unpositioned undefined" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div dir="auto"><div dir="rtl"><markdown-accessiblity-table data-catalyst=""><table>
   <thead>
   <tr>
   <th>lab</th>
@@ -23,11 +22,10 @@
   </tr>
   </tbody>
 </table></markdown-accessiblity-table>
-
-<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">تصنيف الصور باستخدام Azure AI Custom Vision</h1><a id="user-content-تصنيف-الصور-باستخدام-azure-ai-custom-vision" class="anchor" aria-label="Permalink: تصنيف الصور باستخدام Azure AI Custom Vision" href="#تصنيف-الصور-باستخدام-azure-ai-custom-vision"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" dir="auto" class="heading-element">تصنيف الصور باستخدام Azure AI Custom Vision</h1><a id="user-content-تصنيف-الصور-باستخدام-azure-ai-custom-vision" class="anchor" aria-label="Permalink: تصنيف الصور باستخدام Azure AI Custom Vision" href="#تصنيف-الصور-باستخدام-azure-ai-custom-vision"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-تصنيف-الصور-باستخدام-azure-ai-custom-vision" aria-label="Permalink: تصنيف الصور باستخدام Azure AI Custom Vision" href="#تصنيف-الصور-باستخدام-azure-ai-custom-vision"></a></div>
 <p dir="auto">تمكنك خدمة <strong>Azure AI Custom Vision</strong> من إنشاء نماذج رؤية الكمبيوتر المدربة على صورك الخاصة. يمكنك استخدامه لتدريب <em>تصنيف الصور</em> ونماذج <em>الكشف عن الكائنات</em>؛ والتي يمكنك بعد ذلك نشرها واستهلاكها من التطبيقات.</p>
 <p dir="auto">في هذا التمرين، ستستخدم خدمة Custom Vision لتدريب نموذج تصنيف الصور الذي يمكنه اكتشاف ثلاث فئات من الفاكهة (التفاح والموز والبرتقال).</p>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">استنساخ المستودع لهذه الدورة التدريبية</h2><a id="user-content-استنساخ-المستودع-لهذه-الدورة-التدريبية" class="anchor" aria-label="Permalink: استنساخ المستودع لهذه الدورة التدريبية" href="#استنساخ-المستودع-لهذه-الدورة-التدريبية"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">استنساخ المستودع لهذه الدورة التدريبية</h2><a id="user-content-استنساخ-المستودع-لهذه-الدورة-التدريبية" class="anchor" aria-label="Permalink: استنساخ المستودع لهذه الدورة التدريبية" href="#استنساخ-المستودع-لهذه-الدورة-التدريبية"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-استنساخ-المستودع-لهذه-الدورة-التدريبية" aria-label="Permalink: استنساخ المستودع لهذه الدورة التدريبية" href="#استنساخ-المستودع-لهذه-الدورة-التدريبية"></a></div>
 <p dir="auto">إذا لم تكن قد استنسخت بالفعل باستنساخ مستودع التعليمات البرمجية <strong>mslearn-ai-vision</strong> في البيئة التي تعمل فيها في هذا التمرين المعملي، فاتبع هذه الخطوات لتنفيذ بذلك. بخلاف ذلك، افتح المجلد المستنسخ في تعليمة Visual Studio البرمجية.</p>
 <ol dir="rtl">
 <li>
@@ -46,7 +44,7 @@
 </blockquote>
 </li>
 </ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">إنشاء موارد الرؤية المخصصة</h2><a id="user-content-إنشاء-موارد-الرؤية-المخصصة" class="anchor" aria-label="Permalink: إنشاء موارد الرؤية المخصصة" href="#إنشاء-موارد-الرؤية-المخصصة"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">إنشاء موارد الرؤية المخصصة</h2><a id="user-content-إنشاء-موارد-الرؤية-المخصصة" class="anchor" aria-label="Permalink: إنشاء موارد الرؤية المخصصة" href="#إنشاء-موارد-الرؤية-المخصصة"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-إنشاء-موارد-الرؤية-المخصصة" aria-label="Permalink: إنشاء موارد الرؤية المخصصة" href="#إنشاء-موارد-الرؤية-المخصصة"></a></div>
 <p dir="auto">قبل أن تتمكن من تدريب نموذج، ستحتاج إلى موارد Azure <em>للتدريب</em> و<em>التنبؤ</em>. يمكنك إنشاء موارد <strong>Custom Vision</strong> لكل من هذه المهام، أو يمكنك إنشاء مورد <strong>خدمات Azure AI</strong> واحد واستخدامه إما (أو كليهما).</p>
 <p dir="auto">في هذا التمرين، ستقوم بإنشاء موارد <strong>Custom Vision</strong> للتدريب والتنبؤ بحيث يمكنك إدارة الوصول والتكاليف لأحمال العمل هذه بشكل منفصل.</p>
 <ol dir="rtl">
@@ -75,7 +73,7 @@
 <blockquote>
 <p dir="auto"><strong>مهم</strong>: لكل مورد * نقطة نهاية <em>و</em>مفاتيح<em>خاصة به، والتي تستخدم لإدارة الوصول من التعليمات البرمجية الخاصة بك. لتدريب نموذج تصنيف الصور، يجب أن تستخدم التعليمات البرمجية لديك مورد * التدريب</em> (بنقطة النهاية والمفتاح الخاص بها)؛ ولاستخدام النموذج المدرب للتنبؤ بفئات الصور، يجب أن تستخدم التعليمات البرمجية لديك مورد* التنبؤ* (باستخدام نقطة النهاية والمفتاح الخاص بها).</p>
 </blockquote>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">إنشاء مشروع Custom Vision</h2><a id="user-content-إنشاء-مشروع-custom-vision" class="anchor" aria-label="Permalink: إنشاء مشروع Custom Vision" href="#إنشاء-مشروع-custom-vision"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">إنشاء مشروع Custom Vision</h2><a id="user-content-إنشاء-مشروع-custom-vision" class="anchor" aria-label="Permalink: إنشاء مشروع Custom Vision" href="#إنشاء-مشروع-custom-vision"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-إنشاء-مشروع-custom-vision" aria-label="Permalink: إنشاء مشروع Custom Vision" href="#إنشاء-مشروع-custom-vision"></a></div>
 <p dir="auto">لتدريب نموذج تصنيف الصورة، تحتاج إلى إنشاء مشروع رؤية معدلة بناءً على مورد التدريب الخاص بك. للقيام بذلك، ستستخدم مدخل Custom Vision.</p>
 <ol dir="rtl">
 <li>في Visual Studio Code، اعرض صور التدريب في مجلد <strong>LabFiles/07-custom-vision-image-classification/training-images</strong> حيث قمت بنسخ المستودع. يحتوي هذا المجلد على مجلدات فرعية من صور التفاح والموز والبرتقال.</li>
@@ -92,12 +90,12 @@
 </li>
 <li>في المشروع الجديد، انقر على <strong>[+]إضافة صور</strong>، وحدد جميع الملفات في مجلد <strong>LabFiles/07-custom-vision-image-classification/training-images/apple</strong> الذي قمت بعرضه سابقًا. ثم قم بتحميل ملفات الصور، مع تحديد العلامة <em>تفاحة</em>، على النحو التالي:</li>
 </ol>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/upload_apples.jpg"><img src="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/upload_apples.jpg" alt="تحميل التفاح مع علامة التفاح" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/upload_apples.jpg"><img src="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/raw/OLPRODLOC/Instructions/media/upload_apples.jpg" alt="تحميل التفاح مع علامة التفاح" style="max-width: 100%;"></a></p>
 <ol start="5" dir="auto">
 <li>كرر الخطوة السابقة لتحميل الصور في مجلد <strong>الموز</strong> مع <em>الموز</em>العلامة، والصور في المجلد <strong>البرتقالي</strong> مع علامة <em>البرتقالي</em>.</li>
 <li>استكشف الصور التي قمت بتحميلها في مشروع Custom Vision - يجب أن يكون هناك 15 صورة لكل فصل، على النحو التالي:</li>
 </ol>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/fruit.jpg"><img src="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/fruit.jpg" alt="صور مميزة للفاكهة - 15 تفاحة و 15 موزة و 15 برتقالة" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/fruit.jpg"><img src="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/raw/OLPRODLOC/Instructions/media/fruit.jpg" alt="صور مميزة للفاكهة - 15 تفاحة و 15 موزة و 15 برتقالة" style="max-width: 100%;"></a></p>
 <ol start="7" dir="auto">
 <li>في مشروع Custom Vision، فوق الصور، انقر فوق <strong>"تدريب"</strong> لتدريب نموذج تصنيف باستخدام الصور ذات العلامات. حدد خيار <strong>"تدريب سريع"</strong>، ثم انتظر حتى يكتمل تكرار التدريب (قد يستغرق ذلك دقيقة أو نحو ذلك).</li>
 <li>عند تدريب تكرار النموذج، راجع مقاييس الأداء <em>الدقة**والاستدعاء</em>و<em>AP</em> - تقيس هذه دقة التنبؤ لنموذج التصنيف، ويجب أن تكون جميعها عالية.</li>
@@ -105,25 +103,25 @@
 <blockquote>
 <p dir="auto"><strong>ملاحظة</strong>: تستند مقاييس الأداء إلى حد احتمال 50% لكل تنبؤ (بمعنى آخر، إذا كان النموذج يحسب احتمالاً بنسبة 50% أو أعلى أن تكون الصورة من فئة معينة، فسيتم التنبؤ بهذه الفئة). يمكنك ضبط هذا في أعلى يسار الصفحة.</p>
 </blockquote>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">اختبار النموذج</h2><a id="user-content-اختبار-النموذج" class="anchor" aria-label="Permalink: اختبار النموذج" href="#اختبار-النموذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">اختبار النموذج</h2><a id="user-content-اختبار-النموذج" class="anchor" aria-label="Permalink: اختبار النموذج" href="#اختبار-النموذج"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-اختبار-النموذج" aria-label="Permalink: اختبار النموذج" href="#اختبار-النموذج"></a></div>
 <p dir="auto">الآن بعد أن دربت النموذج، يمكنك اختباره.</p>
 <ol dir="rtl">
 <li>فوق مقاييس الأداء، انقر فوق <strong>اختبار سريع</strong>.</li>
 <li>في المربع <strong>URL للصورة،</strong> اكتب <code>https://aka.ms/apple-image</code> وانقر فَوق ➔</li>
 <li>اعرض التوقعات التي يعرضها نموذجك - يجب أن تكون درجة احتمالية <em>تفاحة</em> أعلى، كما يلي:</li>
 </ol>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/test-apple.jpg"><img src="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/test-apple.jpg" alt="صورة مَع التنبؤ الطبقي بالتفاح" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/blob/OLPRODLOC/Instructions/media/test-apple.jpg"><img src="https://github.com/MicrosoftLearning/mslearn-ai-vision.ar-sa/raw/OLPRODLOC/Instructions/media/test-apple.jpg" alt="صورة مَع التنبؤ الطبقي بالتفاح" style="max-width: 100%;"></a></p>
 <ol start="4" dir="auto">
 <li>أغلق نافذة <strong>اختبار سريع</strong>.</li>
 </ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">عرض إعدادات المشروع</h2><a id="user-content-عرض-إعدادات-المشروع" class="anchor" aria-label="Permalink: عرض إعدادات المشروع" href="#عرض-إعدادات-المشروع"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">عرض إعدادات المشروع</h2><a id="user-content-عرض-إعدادات-المشروع" class="anchor" aria-label="Permalink: عرض إعدادات المشروع" href="#عرض-إعدادات-المشروع"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-عرض-إعدادات-المشروع" aria-label="Permalink: عرض إعدادات المشروع" href="#عرض-إعدادات-المشروع"></a></div>
 <p dir="auto">تم تعيين معرف فريد للمشروع الذي قمت بإنشائه، والذي ستحتاج إلى تحديده في أي تعليمة برمجية تتفاعل معه.</p>
 <ol dir="rtl">
 <li>انقر فوق أيقونة <em>الإعدادات</em> (⚙) في أعلى يمين صفحة <strong>الأداء</strong> لعرض إعدادات المشروع.</li>
 <li>ضمن <strong>عام</strong> (على اليسار)، لاحظ <strong>معرف المشروع</strong> لذي يعرف هذا المشروع بشكل فريد.</li>
 <li>على اليمين، ضمن <strong>الموارد</strong> لاحظ أنه يتم عرض المفتاح ونقطة النهاية. هذه هي تفاصيل مورد * التدريب* (يمكنك أيضًا الحصول على هذه المعلومات عن طريق عرض المورد في مدخل Microsoft Azure).</li>
 </ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">استخدام واجهة برمجة تطبيقات <em>التدريب</em></h2><a id="user-content-استخدام-واجهة-برمجة-تطبيقات-التدريب" class="anchor" aria-label="Permalink: استخدام واجهة برمجة تطبيقات التدريب" href="#استخدام-واجهة-برمجة-تطبيقات-التدريب"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">استخدام واجهة برمجة تطبيقات <em>التدريب</em></h2><a id="user-content-استخدام-واجهة-برمجة-تطبيقات-التدريب" class="anchor" aria-label="Permalink: استخدام واجهة برمجة تطبيقات التدريب" href="#استخدام-واجهة-برمجة-تطبيقات-التدريب"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-استخدام-واجهة-برمجة-تطبيقات-التدريب" aria-label="Permalink: استخدام واجهة برمجة تطبيقات التدريب" href="#استخدام-واجهة-برمجة-تطبيقات-التدريب"></a></div>
 <p dir="auto">يوفر مدخل Custom Vision واجهة مستخدم ملائمة يمكنك استخدامها لتحميل الصور ووضع علامات عليها وتدريب النماذج. ومع ذلك، في بعض السيناريوهات قد ترغب في أتمتة تدريب النموذج باستخدام واجهة برمجة تطبيقات تدريب Custom Vision.</p>
 <blockquote>
 <p dir="auto"><strong>ملاحظة</strong>: في هذا التمرين، يمكنك اختيار استخدام واجهة برمجة التطبيقات إما من <strong>#C</strong> أو <strong>Python</strong> SDK. في الخطوات الواردة أدناه، نفذ الإجراءات المناسبة للغتك المفضلة.</p>
@@ -133,7 +131,7 @@
 <li>انقر بزر الماوس الأيمن فوق مجلد <strong>train-classifier</strong> وافتح وحدة طرفية متكاملة. ثم قم بتثبيت حزمة تدريب Custom Vision عن طريق تشغيل الأمر المناسب لتفضيل اللغة لديك:</li>
 </ol>
 <p dir="rtl"><strong>#C</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training --version 2.0.0
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training --version 2.0.0
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training --version 2.0.0" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -143,9 +141,18 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <p dir="rtl"><strong>Python</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install azure-cognitiveservices-vision-customvision==3.1.0
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install azure-cognitiveservices-vision-customvision==3.1.0
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install azure-cognitiveservices-vision-customvision==3.1.0" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -155,10 +162,19 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
-<ol start="3" dir="auto">
+<ol start="3" dir="rtl">
 <li>
-<p dir="auto">اعرض محتويات مجلد <strong>train-classifier</strong>، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:</p>
+<p dir="RTL">اعرض محتويات مجلد <strong>train-classifier</strong>، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:</p>
 <ul dir="rtl">
 <li><strong>C#</strong>: appsettings.json</li>
 <li><strong>Python</strong>: .env</li>
@@ -184,7 +200,7 @@
 </li>
 </ol>
 <p dir="rtl"><strong>#C</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet run
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet run
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="dotnet run" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -194,9 +210,18 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <p dir="rtl"><strong>Python</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python train-classifier.py
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python train-classifier.py
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="python train-classifier.py" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -206,12 +231,21 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <ol start="6" dir="auto">
 <li>انتظر حتى ينتهي البرنامج. ثم ارجع إلى المستعرض الخاص بك واعرض صفحة <strong>صور التدريب</strong> لمشروعك في مدخل Custom Vision (قم بتحديث المتصفح إذا لزم الأمر).</li>
 <li>تحقق من إضافة بعض الصور ذات العلامات الجديدة إلى المشروع. ثم اعرض صفحة <strong>الأداء</strong> وتحقق من إنشاء تكرار جديد.</li>
 </ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">نَشر نموذج تصنيف الصور</h2><a id="user-content-نَشر-نموذج-تصنيف-الصور" class="anchor" aria-label="Permalink: نَشر نموذج تصنيف الصور" href="#نَشر-نموذج-تصنيف-الصور"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">نَشر نموذج تصنيف الصور</h2><a id="user-content-نَشر-نموذج-تصنيف-الصور" class="anchor" aria-label="Permalink: نَشر نموذج تصنيف الصور" href="#نَشر-نموذج-تصنيف-الصور"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-نَشر-نموذج-تصنيف-الصور" aria-label="Permalink: نَشر نموذج تصنيف الصور" href="#نَشر-نموذج-تصنيف-الصور"></a></div>
 <p dir="auto">أنت الآن جاهز لنشر نموذجك المدرّب بحيث يمكن استخدامه من تطبيق عميل.</p>
 <ol dir="rtl">
 <li>في مدخل Custom Vision، في صفحة <strong>الأداء</strong>، انقر فوق <strong>🗸 نشر</strong> لنشر النموذج المُدرب بالإعدادات التالية:
@@ -223,13 +257,13 @@
 <li>في الجزء العلوي الأيسر من صفحة <strong>إعدادات المشروع</strong>، انقر فوق أيقونة <em>معرض المشاريع</em> (👁) للعودة إلى الصفحة الرئيسية لمدخل Custom Vision، حيث يتم إدراج مشروعك الآن.</li>
 <li>في الصفحة الرئيسية لمدخل Custom Vision، في أعلى اليمين، انقر فوق أيقونة *الإعدادات * (⚙) لعرض إعدادات خدمة Custom Vision الخاصة بك. ثم، ضمن <strong>الموارد</strong>، ابحث عن مورد * التنبؤ *الذي ينتهي بـ "-Prediction" (وليس مورد التدريب) لتحديد قيم ** المفتاح **** ونقطة النهاية الخاصة به **(يمكنك أيضًا الحصول على هذه المعلومات عن طريق عرض المورد في مدخل Microsoft Azure).</li>
 </ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">استخدام مصنف الصور من تطبيق عميل</h2><a id="user-content-استخدام-مصنف-الصور-من-تطبيق-عميل" class="anchor" aria-label="Permalink: استخدام مصنف الصور من تطبيق عميل" href="#استخدام-مصنف-الصور-من-تطبيق-عميل"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">استخدام مصنف الصور من تطبيق عميل</h2><a id="user-content-استخدام-مصنف-الصور-من-تطبيق-عميل" class="anchor" aria-label="Permalink: استخدام مصنف الصور من تطبيق عميل" href="#استخدام-مصنف-الصور-من-تطبيق-عميل"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-استخدام-مصنف-الصور-من-تطبيق-عميل" aria-label="Permalink: استخدام مصنف الصور من تطبيق عميل" href="#استخدام-مصنف-الصور-من-تطبيق-عميل"></a></div>
 <p dir="auto">الآن بعد أن قمت بنشر نموذج تصنيف الصور، يمكنك استخدامه من تطبيق عميل. مرة أخرى، يمكنك اختيار استخدام <strong>#C</strong> أو <strong>Python</strong>.</p>
 <ol dir="rtl">
 <li>في Visual Studio Code، في المجلد <strong>07-custom-vision-image-classification</strong>، في المجلد الفرعي للغة المفضلة لديك (<strong>C-Sharp</strong> أو <strong>Python</strong>)، إلى اليمين- المجلد <strong>test-classifier</strong> وافتح وحدة طرفية متكاملة. ثم أدخل الأمر التالي الخاص بـ SDK لتثبيت حزمة تنبؤ Custom Vision:</li>
 </ol>
 <p dir="rtl"><strong>#C</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction --version 2.0.0
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction --version 2.0.0
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction --version 2.0.0" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -239,9 +273,18 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <p dir="rtl"><strong>Python</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install azure-cognitiveservices-vision-customvision==3.1.0
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install azure-cognitiveservices-vision-customvision==3.1.0
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install azure-cognitiveservices-vision-customvision==3.1.0" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -251,6 +294,15 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <blockquote>
 <p dir="auto"><strong>ملاحظة</strong>: تتضمن حزمة Python SDK كلا من حزم التدريب والتنبؤ، وقد تكون مثبتة بالفعل.</p>
@@ -268,7 +320,7 @@
 <li>أعد الوحدة الطرفية المتكاملة للمجلد <strong>test-classifier</strong>، وأدخل الأمر الخاص بـ SDK التالي لتشغيل البرنامج:</li>
 </ol>
 <p dir="rtl"><strong>#C</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet run
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>dotnet run
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="dotnet run" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -278,9 +330,18 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <p dir="rtl"><strong>Python</strong></p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python test-classifier.py
+<div dir="auto"><div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python test-classifier.py
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="python test-classifier.py" tabindex="0" role="button">
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -290,10 +351,20 @@
     <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
 </svg>
     </clipboard-copy>
+  </div></div><div dir="auto">
+    
+      
+    
+
+      
+    
+
+    
   </div></div>
 <ol start="6" dir="auto">
 <li>عرض التسمية (العلامة) ودرجات الاحتمال لكل تنبؤ. يمكنك عرض الصور في مجلد <strong>test-images</strong> للتحقق من أن النموذج قد صنفها بشكل صحيح.</li>
 </ol>
-<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">مزيد من المعلومات</h2><a id="user-content-مزيد-من-المعلومات" class="anchor" aria-label="Permalink: مزيد من المعلومات" href="#مزيد-من-المعلومات"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div dir="auto"><div class="markdown-heading" dir="auto"><h2 tabindex="-1" dir="auto" class="heading-element">مزيد من المعلومات</h2><a id="user-content-مزيد-من-المعلومات" class="anchor" aria-label="Permalink: مزيد من المعلومات" href="#مزيد-من-المعلومات"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><a id="user-content-مزيد-من-المعلومات" aria-label="Permalink: مزيد من المعلومات" href="#مزيد-من-المعلومات"></a></div>
 <p dir="auto">لمزيد من المعلومات حول تصنيف الصور باستخدام خدمة Custom Vision، راجع <a href="https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/" rel="nofollow">وثائق Custom Vision</a>.</p>
-</article></div></div>
+</div></div>
+</article></div>
