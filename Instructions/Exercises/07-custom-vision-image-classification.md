@@ -156,7 +156,7 @@
 </svg>
     </clipboard-copy>
   </div></div>
-<ol start="3" dir="auto">
+<ol start="3" dir="rtl">
 <li>
 <p dir="auto">اعرض محتويات مجلد <strong>train-classifier</strong>، ولاحظ أنه يحتوي على ملف لإعدادات التكوين:</p>
 <ul dir="rtl">
